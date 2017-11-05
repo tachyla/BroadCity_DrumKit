@@ -72,8 +72,18 @@
     audio.currentTime = 0; //rewinds it to start if pressed again
     audio.play();
     console.log(key);
+
     key.classList.add("playing");
     console.log(key);
+
+    //when its done playing; remove playing class 
+  });
+
+  const keys = document.querySelectorAll(".key");
+  //loop over each array el of keys and add the eventListener...
+  //then execute function with desired behavior
+  keys.forEach(key => {
+    key.addEventListener("transitionend", removeTransition)
   });
 
 </script>
