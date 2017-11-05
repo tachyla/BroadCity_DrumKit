@@ -71,13 +71,20 @@
     console.log(audio);
     audio.currentTime = 0; //rewinds it to start if pressed again
     audio.play();
-    console.log(key);
+    //console.log(key);
 
     key.classList.add("playing");
-    console.log(key);
-
+    //console.log(key);
     //when its done playing; remove playing class 
   });
+
+  function removeTransition(e) {
+    if(e.propertyName !== "transform") { //all other e.propertyNames get ignored
+      return;
+    }
+    this.classList.remove("playing");
+    console.log(e.propertyName);
+  }
 
   const keys = document.querySelectorAll(".key");
   //loop over each array el of keys and add the eventListener...
