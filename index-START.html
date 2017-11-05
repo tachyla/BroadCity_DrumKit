@@ -67,7 +67,8 @@
       return;
     } 
     console.log(audio);
-
+    audio.currentTime = 0; //rewinds it to start if pressed again
+    audio.play();
   });
 
 </script>
