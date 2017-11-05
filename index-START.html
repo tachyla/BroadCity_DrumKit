@@ -63,12 +63,15 @@
   //then performs indicated action
   window.addEventListener("keydown", function(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    //alternatively could have used div, but .key class is more specific
     if(!audio){
       return;
     } 
     console.log(audio);
     audio.currentTime = 0; //rewinds it to start if pressed again
     audio.play();
+    console.log(key);
   });
 
 </script>
